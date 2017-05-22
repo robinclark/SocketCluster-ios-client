@@ -360,7 +360,7 @@
         NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:objectData options:kNilOptions error:&error];
     
         
-        NSLog(@"%@",message);
+        //NSLog(@"%@",message);
         if (dictionary) {
             
             
