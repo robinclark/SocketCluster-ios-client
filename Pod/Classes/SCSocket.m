@@ -610,7 +610,7 @@
         if (token&& ![token isKindOfClass:[NSNull class]] &&[token length]>0) {
             
             JWTToken = token;
-        
+            isAuthenticated = YES;
             
             if (waitResendUntilAuth && restoreChannels &&  reconnecting) {
                 
