@@ -26,7 +26,7 @@ typedef enum _SOCKET_STATE {
 -(void)socketClusterAuthenticateEvent:( NSString* _Nonnull)token;
 -(void)socketClusterConnectEvent:(BOOL)reconnecting;
 -(void)socketClusterReceivedEvent:(NSString * _Nonnull)eventName WithData:( NSDictionary *_Nullable)data isStandartEvent:(BOOL)isStandartEvent;
-
+-(void)socketClusterSocketFailedToConnect;
 
 @end
 

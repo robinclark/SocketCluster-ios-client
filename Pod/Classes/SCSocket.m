@@ -119,6 +119,10 @@
 
 - (void)webSocket:(SRWebSocket *)webSocket didFailWithError:(NSError *)error{
     
+    if ([self.delegate respondsToSelector:@selector(socketClusterSocketFailedToConnect)]){
+        [self.delegate socketClusterSocketFailedToConnect];
+    }
+    
     if (SCReconnectTime>0) {
        
         NSInteger randReconnectTime = arc4random() % (MaxSCReconnectTime - SCReconnectTime) + SCReconnectTime;
@@ -132,6 +136,10 @@
 
 - (void)webSocket:(SRWebSocket *)webSocket didCloseWithCode:(NSInteger)code reason:(NSString *)reason wasClean:(BOOL)wasClean{
    
+    if ([self.delegate respondsToSelector:@selector(socketClusterSocketFailedToConnect)]){
+        [self.delegate socketClusterSocketFailedToConnect];
+    }
+    
     if (SCReconnectTime>0 && !isPaused) {
         
         reconnecting =YES;
